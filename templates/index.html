@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parking Space Monitoring</title>
+    <link rel="stylesheet" href="templates/style.css">
+    
+    <style>
+#stream{
+    height: 480px;
+    width: 640px;
+    border-radius: 10px;
+    position: absolute;
+    top:0px;
+    left:0px;
+}    
+    
+.bg {
+    height: 480px;
+    width: 640px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+}
+
+pre {
+    font-size: 20px;
+    text-align: center;
+}
+
+.card1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.card2 {
+    position: absolute;
+    top: 20px;
+    left: 710px;
+}
+
+.card3 {
+    position: absolute;
+    top: 600px;
+    left: 20px;
+}
+
+.card4 {
+    position: absolute;
+    top: 600px;
+    left: 710px;
+}
+
+.card1 pre {
+    position: absolute;
+    top: 470px;
+    left: 230px;
+}
+
+.card2 pre {
+    position: absolute;
+    top: 470px;
+    left: 230px;
+}
+
+.card3 pre {
+    position: absolute;
+    top: 470px;
+    left: 230px;
+}
+
+.card4 pre {
+    position: absolute;
+    top: 470px;
+    left: 230px;
+}
+
+.info {
+    position: absolute;
+    top: 20px;
+    width: 400px;
+    border-left: 2px solid #ddd;
+    padding-left: 20px;
+    left: 1390px;
+    text-align: center;
+}
+
+ .info h2 {
+    margin: 0;
+    padding-bottom: 20px;
+}
+/*
+.info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+    */
+.info table th, .info table td {
+    padding: 10px 40px 10px 40px;
+    border-bottom: 1px solid #ddd;
+}
+.info .area-title {
+    font-weight: bold;
+    text-align: left;
+} 
+
+.footer {
+   position: absolute;
+   top: 1150px;
+   width: 100%;
+   left: 0;
+   background-color: rgb(44, 44, 44);
+   color: white;
+   text-align: center;
+   vertical-align: baseline;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="card1">
+        <div class="bg"></div>
+        <img id="stream" src="{{ url_for('video_feed') }}">
+        <pre>GF1:     <span style="color: green">6     </span> <span style="color: red">6</pre>
+    </div>
+    <div class="card2">
+        <div class="bg"></div>
+        <pre>GF2:     <span style="color: green">6     </span> <span style="color: red">6</pre>
+    </div>
+    <div class="card3">
+        <div class="bg"></div>
+        <pre>GF3:     <span style="color: green">6     </span> <span style="color: red">6</pre>
+    </div>
+    <div class="card4">
+        <div class="bg"></div>
+        <pre>GF4:     <span style="color: green">6     </span> <span style="color: red">6</pre>
+    </div>
+
+    <div class="info">
+        <h1>Parking Space Monitoring</h1>
+        <p>Total Sisa Kuota Lahan Parkir: <strong>80</strong></p>
+        <p>Total Mobil Terdeteksi: <strong>420</strong></p>
+        <br>
+        <div class="area-title">Ground Floor (GF)</div>
+        <table>
+            <tr>
+                <th>Area</th>
+                <th>Terdeteksi</th>
+                <th>Sisa Kuota</th>
+            </tr>
+            <tr>
+                <td>GF1</td>
+                <td>5</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>GF2</td>
+                <td>12</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>GF3</td>
+                <td>21</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>GF4</td>
+                <td>19</td>
+                <td>0</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 All Rights Reserved</p>
+    </div> 
+
+</body>
+</html>
